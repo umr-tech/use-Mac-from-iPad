@@ -32,6 +32,32 @@ GUI版とCUI版の両方をインストールしています。
 TailscaleでMacとiPadの両方がリストされていれば仮想LANは構築できています。
 
 ## 2 hbbs/hbbrサーバーを構築する
+いずれも遠隔接続に必要なサーバーです。
+Dockerコンテナとして提供されているので、まずはDockerをインストールします。
+```zsh
+brew install --cask docker
+```
+Docker Desktopを起動して下さい。
+
+hbbsサーバーを構築します。
+```zsh
+docker run -d --name hbbs --restart unless-stopped \
+-v "$HOME/Documents/rustdesk-server:/root" \
+-p 21115:21115 \
+-p 21116:21116 \
+-p 21116:21116/udp \
+rustdesk/rustdesk-server hbbs
+```
+
+hbbrサーバーを構築します。
+```zsh
+docker run -d --name hbbr --restart unless-stopped \
+  -v "$HOME/Documents/rustdesk-server:/root" \
+  -p 21117:21117 \
+  -p 21118:21118 \
+  -p 21119:21119 \
+  rustdesk/rustdesk-server hbbr
+```
 
 ## 3 接続に必要な情報を得る
 

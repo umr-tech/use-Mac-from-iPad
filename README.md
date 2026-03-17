@@ -1,6 +1,10 @@
 # use-Mac-from-iPad
+自宅にMacがあり、iPadのみを持って外出している場合でも、iPadからMacに遠隔接続し、操作することを可能にします。
 
 ## 前提
+1. MacにHomebrewをインストールしていること
+2. Macは常時起動していること
+3. MacとiPadはインターネットに接続していること
 
 ## 1 Tailscaleをインストールする
 

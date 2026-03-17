@@ -7,6 +7,29 @@
 3. MacとiPadはインターネットに接続していること
 
 ## 1 Tailscaleをインストールする
+TailscaleとはVPNを提供するアプリです。MacとiPadが同一VPNに接続することにより仮想LANを構築し、安全性を確保します。
+```mermaid
+graph TD
+  subgraph home[家]
+  mac(Mac)
+  end
+  subgraph out[外出先]
+  ipad(iPad)
+  end
+  vpn(Tailscale) --- home
+  vpn --- out
+```
+まずはMacにTailscaleをインストールします。
+```zsh
+brew install --cask tailscale
+brew install tailscale
+```
+GUI版とCUI版の両方をインストールしています。
+インストールしたGUI版を開き、アカウントの新規作成/ログインをして下さい。
+
+次にiPadにもApp Store経由でTailscaleをインストールします。Mac版と同じアカウントでログインして下さい。
+
+TailscaleでMacとiPadの両方がリストされていれば仮想LANは構築できています。
 
 ## 2 Rustdeskをインストールする
 

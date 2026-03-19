@@ -1,4 +1,4 @@
-# use-Mac-from-iPad
+# MacをiPadから使う
 自宅にMacがあり、iPadのみを持って外出している場合でも、iPadからMacに遠隔接続し、操作することを可能にします。
 
 ## 前提

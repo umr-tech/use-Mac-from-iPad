@@ -62,6 +62,19 @@ docker run -d --name hbbr --restart unless-stopped \
 docker runコマンドにより、rustdeskサーバーのhbbsとhbbrを起動しています。-dオプションは、サーバーをバックグラウンドで動かすためのものです。--restart unless-stoppedを付けたので、明示的に停止させない限りは自動的にサーバーが再起動します。
 
 ## 3 接続に必要な情報を得る
+1. 仮想LANにおけるMacのIPアドレス（＝hbbs/hbbrサーバーのIPアドレス）
+2. hbbsサーバーが発行する公開鍵
+
+の2つの情報が必要です。
+
+### 3.1 IPアドレス
+MacのIPアドレスはTailscaleから知ることができます。GUIでMacの情報を見ても良いですし、
+```zsh
+tailscale ip -4
+```
+の値を見ても良いです。
+
+### 3.2 公開鍵
 
 ## 4 Rustdeskをインストールする
 

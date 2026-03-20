@@ -39,6 +39,11 @@ brew install --cask docker
 ```
 Docker Desktopを起動して下さい。dockerdというデーモンが起動し、コンテナを動かせるようになります。
 
+次にサーバー情報を保存するためのディレクトリを作成します。
+```zsh
+mkdir ~/Documents/rustdesk-server
+```
+
 hbbsサーバーを構築します。
 ```zsh
 docker run -d --name hbbs --restart unless-stopped \

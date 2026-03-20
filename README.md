@@ -95,7 +95,16 @@ brew install --cask rustdesk
 
 iPadにもApp Store経由でRustdeskをインストールします。Mac版と同様に、認証/中継サーバー情報としてIPアドレスを入力し、Keyとして公開鍵を入力してください。
 
-## 5 権限・ログイン項目を設定する
+## 5 ログイン項目・権限を設定する
+遠隔接続には、
+1. Tailscale
+2. Docker(hbbs/hbbr)
+3. Rustdesk
+
+の起動が必須です。そのため、この3つをログイン項目として設定しておくと良いでしょう。Macにログインした時に自動的にこれらアプリが起動するので、不意の接続不良をふせぐことができます。
+
+また、遠隔操作を許す以上、Rustdeskにはいくつかの権限を与える必要があります。Macの設定から、以下の権限を与えておきましょう。
+1. TODO
 
 ## 6 接続する
 Mac側Rustdeskを見ると、リモートIDが発行されています。このIDをiPad版Rustdeskに入力すると、`Permanent Password`の入力後に、Macの画面がiPadに投影されます。

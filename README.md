@@ -9,15 +9,19 @@
 ## 1 Tailscaleをインストールする
 TailscaleとはVPNを提供するアプリです。MacとiPadが同一VPNに接続することにより仮想LANを構築し、ポートを外部に公開することなく安全に遠隔接続できるようにします。
 ```mermaid
-graph TD
+graph LR
   subgraph home[家]
-  mac(Mac)
+    mac(Mac)
   end
+
   subgraph out[外出先]
-  ipad(iPad)
+    ipad(iPad)
   end
-  vpn(Tailscale) --- home
-  vpn --- out
+
+  vpn(Tailscale)
+
+  vpn --- mac
+  vpn --- ipad
 ```
 まずはMacにTailscaleをインストールします。
 ```zsh
